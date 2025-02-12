@@ -1,0 +1,60 @@
+--- # Example config for general mapping
+
+
+cfg:
+  TEMPLATE_ID: "RPL/2022/Parcel/{`seq`}"
+  CONTEXT: ["https://w3id.org/demeter/agri-context.jsonld", description: "http://schema.org/description", M: "http://qudt.org/vocab/unit/M", testing_val: "http://somevalue.for.testing/testing_val", "https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context.jsonld"]
+  MAIN TYPE:
+    "@type": "QuantityValue"
+    referenceArea:
+        uri: ~
+        "@type": "QuantityValue3"
+        secondLevelEnumProperty:
+            "@1":
+                uri: ~
+                "@type": "QuantityValue1"
+                numericValue: "`lang`|<double>"
+                deepestAttr:
+                    uri: ~
+                    "@type": "QuantityValue4"
+                    property: "`prop`|<string>"
+            "@2":
+                uri: "http://referenceArea.uri2.com"
+                "@type": "QuantityValue2"
+                numericValue: "`lat`|<double>"
+    anotherMainAttr:
+        uri: "http://www.example.org/anotherMainAttr/{`seq`}"
+        "@type":
+            - QuantityValue
+            - QuantityValue1
+        numericValue: "`lang2`|<double>"
+        unit: "`code2`|<description>"
+        secondLevel:
+            uri: ~
+            "@type": "QuantityValue4a"
+            property: "`prop`|<string>"
+            thirdLevelEnumProperty:
+                "@1":
+                    uri: ~
+                    "@type": "QuantityValue2x"
+                    numericValue: "`lat`|<double>"
+                "@2":
+                    uri: "http://referenceArea.uri2y.com"
+                    "@type": "QuantityValue2y"
+                    numericValue: "`lat`|<double>"
+    firstLevelEnumProperty:
+        "@1":
+            uri: ~
+            "@type": QuantityValue1a
+            numericValue: "`lang`|<double>"
+            deep:
+                uri: ~
+                "@type": QuantityValue4a
+                property: "`prop`|<string>"
+        "@2":
+            uri: http://referenceArea.uri3.com
+            "@type": QuantityValue2a
+            numericValue: "`lat`|<double>"
+    label:
+        "@1": "label_value1|<string>"
+        "@2": "label_value2|<string>"

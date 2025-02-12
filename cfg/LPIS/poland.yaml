@@ -1,0 +1,10 @@
+--- # Mapping configuration for Poland
+
+cfg: {BASE_URI: 'http://w3id.org/iacs/open/pl/LPIS/',
+      LABEL: 'Polish LPIS parcel of cadastral reference #{`IDENTYFIKA`}',
+      IACS_ID: '{`IDENTYFIKA`}',
+      VALID_FROM: '{`DATA_OD`}',
+      SHORT_ID: '`NUMER`',
+      MUNICIPALITY_ID: '`TERYT`',
+      AREA: '`POWIERZCHN`',
+      TEMPLATE_ID: '{`OBJECTID`}',}

@@ -1,0 +1,25 @@
+--- # Main configuration
+
+vto_cfg: {SSH_PASSPHRASE: ~,
+          VIRTUOSO_PORT: ~,
+          VIRTUOSO_USER: ~,
+          VIRTUOSO_PASSWORD: ~,
+          DUMP_EXTENSION: '.nt',
+          DATA_FOLDER: 'data_hslayers',
+          DATA_PREFIX: ~,
+          SERVER_USER: ~,
+          SERVER_HOST: ~,}
+
+lpis_countries: {OTHER: 'other.yaml',
+                 SPAIN: 'spain.yaml',
+                 POLAND: 'poland.yaml',
+                 LITHUANIA: 'lithuania.yaml',}
+
+sql_cfg : {
+          DB_TYPE: 'postgresql',
+          DB_USERNAME: '',
+          DB_PASSWORD: '',
+          DB_HOST: '',
+          DB_PORT: '',
+          DB_NAME: '',
+}

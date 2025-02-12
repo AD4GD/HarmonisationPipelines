@@ -1,0 +1,6 @@
+--- # Mapping configuration for other countries
+
+cfg: {BASE_URI: '',
+      LABEL: '',
+      IACS_ID: '',
+      TEMPLATE_ID: '',}

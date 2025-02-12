@@ -1,0 +1,265 @@
+@prefix rr: <http://www.w3.org/ns/r2rml#>.
+@prefix  rml: <http://semweb.mmlab.be/ns/rml#> .
+@prefix ql: <http://semweb.mmlab.be/ns/ql#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
+@prefix rrx: <http://www.w3.org/ns/r2rml-ext#>.
+@prefix rrxf: <http://www.w3.org/ns/r2rml-ext/functions/def/>.
+@prefix ogc: <http://www.opengis.net/ont/geosparql#>.
+@prefix schema: <http://schema.org/>.
+@prefix : <http://w3id.org/foodie/fadn#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix qb: <http://purl.org/linked-data/cube#> .
+@prefix sdmx:    <http://purl.org/linked-data/sdmx#> .
+@prefix sdmx-concept:    <http://purl.org/linked-data/sdmx/2009/concept#> .
+@prefix sdmx-dimension:  <http://purl.org/linked-data/sdmx/2009/dimension#> .
+@prefix sdmx-attribute:  <http://purl.org/linked-data/sdmx/2009/attribute#> .
+@prefix sdmx-measure:    <http://purl.org/linked-data/sdmx/2009/measure#> .
+@prefix sdmx-metadata:   <http://purl.org/linked-data/sdmx/2009/metadata#> .
+@prefix sdmx-code:       <http://purl.org/linked-data/sdmx/2009/code#> .
+@prefix sdmx-subject:    <http://purl.org/linked-data/sdmx/2009/subject#> .
+@prefix dcterms:         <http://purl.org/dc/terms/>.
+@prefix skos:           <http://www.w3.org/2004/02/skos/core#> .
+@prefix interval: <http://reference.data.gov.uk/def/intervals/> .
+@prefix admingeo: <http://data.ordnancesurvey.co.uk/ontology/admingeo/> .
+@prefix nuts: <http://nuts.geovocab.org/id/> .
+@prefix org:      <http://www.w3.org/ns/org#> .
+@prefix foaf:           <http://xmlns.com/foaf/0.1/> .
+@prefix locn:	<http://www.w3.org/ns/locn#> .
+@base <http://w3id.org/foodie/fadn#> .
+
+
+# --- Data Structure --------------------------------------
+
+<module_ns> a rr:TriplesMap;   # variable
+
+rml:logicalSource [
+	rml:source "";   #variable with path to the csv auxiliary file
+	rml:referenceFormulation ql:CSV;
+
+];
+rr:subjectMap [
+	rml:reference "uri";
+	rr:class qb:DataStructureDefinition;
+];
+
+rr:predicateObjectMap [
+	rr:predicateMap [ rr:constant qb:component ];
+	rr:objectMap [
+		rr:parentTriplesMap <#dimension1>;
+	];
+];
+rr:predicateObjectMap [
+	rr:predicateMap [ rr:constant qb:component ];
+	rr:objectMap [
+		rr:parentTriplesMap <#dimension2>;
+	];
+];
+rr:predicateObjectMap [
+	rr:predicateMap [ rr:constant qb:component ];
+	rr:objectMap [
+		rr:parentTriplesMap <#dimension3>;
+	];
+];
+rr:predicateObjectMap [
+	rr:predicateMap [ rr:constant qb:component ];
+	rr:objectMap [
+		rr:parentTriplesMap <#dimension4>;
+	];
+];
+rr:predicateObjectMap [
+	rr:predicateMap [ rr:constant qb:component ];
+	rr:objectMap [
+		rr:parentTriplesMap <#dimension5>;
+	];
+];
+rr:predicateObjectMap [
+	rr:predicateMap [ rr:constant qb:component ];
+	rr:objectMap [
+		rr:parentTriplesMap <#measures>;
+	];
+];
+rr:predicateObjectMap [
+	rr:predicateMap [ rr:constant qb:sliceKey ];
+	rr:objectMap [
+		rr:termType rr:IRI; 
+		rml:reference "sliceKey";
+	];
+].
+
+<#dimension1> a rr:TriplesMap; 
+
+rml:logicalSource [
+	rml:source "";   #variable with path to the csv auxiliary file
+	rml:referenceFormulation ql:CSV;
+
+];
+rr:subjectMap [
+	rr:termType rr:BlankNode;
+];
+
+rr:predicateObjectMap [
+	rr:predicateMap [ rr:constant qb:dimension ];
+	rr:objectMap [
+		rr:termType rr:IRI;
+		rml:reference "dimension1";
+	];
+];
+rr:predicateObjectMap [
+	rr:predicateMap [ rr:constant qb:order ];
+	rr:objectMap [
+		rr:datatype  xsd:int;
+		rml:reference "dimension1Order";
+	];
+].
+
+<#dimension2> a rr:TriplesMap; 
+
+rml:logicalSource [
+	rml:source "";   #variable with path to the csv auxiliary file
+	rml:referenceFormulation ql:CSV;
+
+];
+rr:subjectMap [
+	rr:termType rr:BlankNode;
+];
+
+rr:predicateObjectMap [
+	rr:predicateMap [ rr:constant qb:dimension ];
+	rr:objectMap [
+		rr:termType rr:IRI;
+		rml:reference "dimension2";
+	];
+];
+rr:predicateObjectMap [
+	rr:predicateMap [ rr:constant qb:order ];
+	rr:objectMap [
+		rr:datatype  xsd:int;
+		rml:reference "dimension2Order";
+	];
+];
+rr:predicateObjectMap [
+    rr:predicateMap [ rr:constant qb:componentAttachment ];
+    rr:objectMap [
+      rr:termType rr:IRI;
+			rr:constant qb:Slice
+		];
+].
+
+<#dimension3> a rr:TriplesMap; 
+
+rml:logicalSource [
+	rml:source "";   #variable with path to the csv auxiliary file
+	rml:referenceFormulation ql:CSV;
+
+];
+rr:subjectMap [
+	rr:termType rr:BlankNode;
+];
+
+rr:predicateObjectMap [
+	rr:predicateMap [ rr:constant qb:dimension ];
+	rr:objectMap [
+		rr:termType rr:IRI;
+		rml:reference "dimension3";
+	];
+];
+rr:predicateObjectMap [
+	rr:predicateMap [ rr:constant qb:order ];
+	rr:objectMap [
+		rr:datatype  xsd:int;
+		rml:reference "dimension3Order";
+	];
+];
+rr:predicateObjectMap [
+    rr:predicateMap [ rr:constant qb:componentAttachment ];
+    rr:objectMap [
+      rr:termType rr:IRI;
+			rr:constant qb:Slice
+		];
+].
+
+<#dimension4> a rr:TriplesMap; 
+
+rml:logicalSource [
+	rml:source "";   #variable with path to the csv auxiliary file
+	rml:referenceFormulation ql:CSV;
+
+];
+rr:subjectMap [
+	rr:termType rr:BlankNode;
+];
+
+rr:predicateObjectMap [
+	rr:predicateMap [ rr:constant qb:dimension ];
+	rr:objectMap [
+		rr:termType rr:IRI;
+		rml:reference "dimension4";
+	];
+];
+rr:predicateObjectMap [
+	rr:predicateMap [ rr:constant qb:order ];
+	rr:objectMap [
+		rr:datatype  xsd:int;
+		rml:reference "dimension4Order";
+	];
+];
+rr:predicateObjectMap [
+    rr:predicateMap [ rr:constant qb:componentAttachment ];
+    rr:objectMap [
+      rr:termType rr:IRI;
+			rr:constant qb:Slice
+		];
+].
+
+<#dimension5> a rr:TriplesMap; 
+
+rml:logicalSource [
+	rml:source "";   #variable with path to the csv auxiliary file
+	rml:referenceFormulation ql:CSV;
+
+];
+rr:subjectMap [
+	rr:termType rr:BlankNode;
+];
+
+rr:predicateObjectMap [
+	rr:predicateMap [ rr:constant qb:dimension ];
+	rr:objectMap [
+		rr:termType rr:IRI;
+		rml:reference "dimension5";
+	];
+];
+rr:predicateObjectMap [
+	rr:predicateMap [ rr:constant qb:order ];
+	rr:objectMap [
+		rr:datatype  xsd:int;
+		rml:reference "dimension5Order";
+	];
+];
+rr:predicateObjectMap [
+    rr:predicateMap [ rr:constant qb:componentAttachment ];
+    rr:objectMap [
+      rr:termType rr:IRI;
+			rr:constant qb:Slice
+		];
+].
+
+<#measures> a rr:TriplesMap; 
+
+rml:logicalSource [
+	rml:source "";   # variable with path to the csv auxiliary file
+	rml:referenceFormulation ql:CSV;
+
+];
+rr:subjectMap [
+  rr:termType rr:BlankNode;
+
+];
+rr:predicateObjectMap [
+    rr:predicateMap [ rr:constant qb:measure ];
+    rr:objectMap [
+			rr:parentTriplesMap <measures_ns>;   #variable with a package name and slices i.e. <#year.country.tf_gen1.tf_prin2.tf_subp4.measures>
+		]
+].

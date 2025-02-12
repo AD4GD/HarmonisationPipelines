@@ -1,0 +1,68 @@
+@prefix geof: <http://www.opengis.net/def/function/geosparql/>.
+@prefix map: <#>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix geo:   <http://www.opengis.net/ont/geosparql#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix rr: <http://www.w3.org/ns/r2rml#>.
+@prefix rrx: <http://www.w3.org/ns/r2rml-ext#>.
+@prefix rrxf: <http://www.w3.org/ns/r2rml-ext/functions/def/>.
+@prefix strdf: <http://strdf.di.uoa.gr/ontology#>.
+@prefix iso19150-2: <http://def.seegrid.csiro.au/isotc211/iso19150/-2/2012/basic#> .
+@prefix foodie: <http://foodie-cloud.com/model/foodie#> .
+@prefix foodie-cz: <http://foodie-cloud.com/model/foodie-cz#> .
+@prefix foodie-es: <http://foodie-cloud.com/model/foodie-es#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
+@prefix owl:   <http://www.w3.org/2002/07/owl#> .
+@prefix skos:  <http://www.w3.org/2004/02/skos/core#> .
+@prefix virtrdf: <http://www.openlinksw.com/schemas/virtrdf#> .
+@prefix iso19103: <http://def.seegrid.csiro.au/isotc211/iso19103/2005/basic#> .
+@prefix common: <http://portele.de/ont/inspire/baseInspire#> .
+@prefix prov:  <http://www.w3.org/ns/prov#> .
+@prefix olu: <http://w3id.org/foodie/olu#> .
+@prefix af-inspire:	<http://inspire.ec.europa.eu/schemas/af/3.0#> .
+@prefix gn: <http://www.geonames.org/ontology#> .
+@prefix cap-iacs-base: <http://lpis.ec.europa.eu/registry/applicationschema/cap-iacs-base#> .
+@prefix cap-iacs-basecode: <http://lpis.ec.europa.eu/registry/applicationschema/cap-iacs-base/code#> .
+@prefix cap-iacs-parcel: <http://lpis.ec.europa.eu/registry/applicationschema/cap-iacs-parcel#> .
+@prefix cap-iacs-parcelcode: <http://lpis.ec.europa.eu/registry/applicationschema/cap-iacs-parcel/code#> .
+@prefix cap-iacs-beneficiery: <http://lpis.ec.europa.eu/registry/applicationschema/cap-iacs-beneficiery#> .
+@prefix cap-iacs-beneficierycode: <http://lpis.ec.europa.eu/registry/applicationschema/cap-iacs-beneficiery/code#> .
+@prefix cap-iacs-control: <http://lpis.ec.europa.eu/registry/applicationschema/cap-iacs-control#> .
+@prefix cap-iacs-controlcode: <http://lpis.ec.europa.eu/registry/applicationschema/cap-iacs-control/code#> .
+@prefix cap-iacs-aid: <http://lpis.ec.europa.eu/registry/applicationschema/cap-iacs-aid#> .
+@prefix cap-iacs-aidcode: <http://lpis.ec.europa.eu/registry/applicationschema/cap-iacs-aid/code#> .
+@prefix cap-fas: <http://lpis.ec.europa.eu/registry/applicationschema/cap-fas#> .
+@prefix cap-iacs-animal: <http://lpis.ec.europa.eu/registry/applicationschema/cap-iacs-animal#> .
+@prefix cap-iacs-entitlement: <http://lpis.ec.europa.eu/registry/applicationschema/cap-iacs-entitlement#> .
+@prefix cap-iacs-entitlementcode: <http://lpis.ec.europa.eu/registry/applicationschema/cap-iacs-entitlement/code#> .
+@prefix cap-iacs-parcel-ext: <http://lpis.ec.europa.eu/registry/applicationschema/cap-iacs-parcel#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+
+
+##################### Parcel Area #####################
+
+<#filename_parcel_area>   # variable ns
+    rr:logicalTable [ rr:tableName "`{filename}`"; ]; # variable filename
+    rr:subjectMap [ rr:class qudt:QuantityValue; rr:template "{temp_area}"; ]; # variable temp_area
+
+    rr:predicateObjectMap [
+        rr:predicate qudt:numericValue;
+        rr:objectMap [
+            rr:datatype xsd:double;
+            rr:column "`{surface}`";  # variable surface
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate qudt:unit;
+        rr:objectMap [
+            rr:constant <http://qudt.org/vocab/unit/M2> ;
+        ];
+    ];
+    .

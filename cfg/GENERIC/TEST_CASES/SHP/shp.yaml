@@ -1,0 +1,76 @@
+--- # Configuration for general mapping solution Lithuania GSAA
+
+
+cfg:
+  #TEMPLATE_ID: "2022/Parcel/{`UNIKALUS_I`}"
+  TEMPLATE_ID: "2022/Parcel/{`OBJECTID`}"
+  CONTEXT: ["https://w3id.org/demeter/agri-context.jsonld",
+            Application: "http://lpis.ec.europa.eu/registry/applicationschema/cap-iacs-aid#Application",
+            M: "http://qudt.org/vocab/unit/M", 
+            M2: "http://qudt.org/vocab/unit/M2", 
+            crop: "http://lpis.ec.europa.eu/registry/applicationschema/cap-iacs-aid#crop",
+            iacsId: "http://lpis.ec.europa.eu/registry/applicationschema/cap-iacs-base#iacsId",
+            isPartOf: "http://purl.org/dc/terms/isPartOf", 
+            description: "http://purl.org/dc/terms/description",
+            hasBoundingBox: "http://www.opengis.net/ont/geosparql#hasBoundingBox",
+            GeometryVirt: "http://www.openlinksw.com/schemas/virtrdf#Geometry",
+            Ontology: "http://www.w3.org/2002/07/owl#Ontology", 
+            Dataset: "http://www.w3.org/ns/dcat#Dataset",
+            geoJSONLiteral: "http://www.opengis.net/ont/geosparql#geoJSONLiteral",            
+            wktLiteral: "http://www.opengis.net/ont/geosparql#wktLiteral",
+            identifierScheme: "http://portele.de/ont/inspire/baseInspire#identifierScheme",
+            shortId: "http://foodie-cloud.com/model/foodie#shortId",
+            Location: "http://purl.org/dc/terms/Location",
+            asGeoJSON: "http://www.opengis.net/ont/geosparql#asGeoJSON",
+            spatial: "http://purl.org/dc/terms/spatial",
+            bbox: "http://www.w3.org/ns/dcat#bbox",
+            geometry: "http://www.w3.org/ns/locn#geometry",
+            referenceArea: "http://lpis.ec.europa.eu/registry/applicationschema/cap-iacs-parcel#referenceArea",
+            observedPerimeter: "http://lpis.ec.europa.eu/registry/applicationschema/cap-iacs-control#observedPerimeter",                        
+            validFrom: "http://lpis.ec.europa.eu/registry/applicationschema/cap-iacs-base#validFrom",
+            FeatureCollection: "http://www.opengis.net/ont/geosparql#FeatureCollection"]
+  MAIN TYPE:
+    "@type": ["Feature","Application"]
+    referenceArea:
+      uri: ~
+      "@type": "QuantityValue"
+      numericValue: "`Shape_Area`|<double>"
+      unit: "M2"
+    observedPerimeter:
+      uri: ~
+      "@type": "QuantityValue"
+      numericValue: "`Shape_Leng`|<double>"
+      unit: "M"
+    crop: "http://w3id.org/iacs/open/lt/gsaa/code/cropCodeValue/{`PSL_KODAS`}"    
+    label: "Lithuanian GSAA application #{`OBJECTID`} for LPIS block #{`BLK_NR`} field #{`LAUKO_NR`} - year 2022|<string>"
+    iacsId: "`OBJECTID`|<string>"    
+    identifier: "`OBJECTID`|<token>"
+    isPartOf: 
+      uri: "http://w3id.org/iacs/open/lt/GSAA/2022"
+      "@type": FeatureCollection
+      description: "Collection of Lithuania GSAA data 2022|<string>"
+      identifier: "GSAA 2022|<token>"
+      title: "Lithuania GSAA applications collection 2022|<string>"
+      hasBoundingBox:
+        uri: "http://w3id.org/iacs/open/lt/GSAA/2022/Boundingbox"
+        "@type": Geometry
+        asWKT: "POLYGON((20.573667940943242 56.68266001903969,28.17620700344324 56.68266001903969,28.17620700344324 53.673145876688416,20.573667940943242 53.673145876688416,20.573667940943242 56.68266001903969))|<GeometryVirt>"        
+        asGeoJSON: "<{\"type\": \"Polygon\", \"coordinates\": [[[20.573667940943242, 56.68266001903969], [20.573667940943242, 53.673145876688416], [28.17620700344324, 53.673145876688416], [28.17620700344324, 56.68266001903969], [20.573667940943242, 56.68266001903969]]]}>|<geoJSONLiteral>"
+      isPartOf: 
+        uri: "http://w3id.org/iacs/open/lt/GSAA"
+        "@type": ["Ontology", "Dataset"]
+        description: "A Dataset containing Linked Data representations of Geospatial aid application as part of the Aid applications subsystem of IACS from Lithuania|<string>"
+        identifier: "GSAA|<token>"
+        title: "GSAA Dataset from Lithuania|<string>"        
+        spatial: 
+          uri: "http://w3id.org/iacs/open/lt/GSAA/Boundingbox"
+          "@type": Location
+          bbox: "POLYGON((20.573667940943242 56.68266001903969,28.17620700344324 56.68266001903969,28.17620700344324 53.673145876688416,20.573667940943242 53.673145876688416,20.573667940943242 56.68266001903969))|<wktLiteral>"          
+          geometry: "<{\"type\": \"Polygon\", \"coordinates\": [[[20.573667940943242, 56.68266001903969], [20.573667940943242, 53.673145876688416], [28.17620700344324, 53.673145876688416], [28.17620700344324, 56.68266001903969], [20.573667940943242, 56.68266001903969]]]}>|<geoJSONLiteral>"
+        member: "http://w3id.org/iacs/open/lt/GSAA/2022"
+      member: "http://w3id.org/iacs/open/lt/GSAA/2022/Parcel/{`OBJECTID`}"
+    identifierScheme: "http://w3id.org/iacs/open/lt/GSAA"
+    validFrom: "2022-01-01|<date>"
+    generatedAtTime: "2023-05-03|<date>"
+    shortId: "`BLK_NR`|<string>"    
+        

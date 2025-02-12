@@ -1,0 +1,84 @@
+--- # Configuration for general mapping solution Oilspill
+
+
+cfg:  
+  TEMPLATE_ID: "oilspills/observationCollection/{`trajectory`}+{`lon`}+{`lat`}"
+  CONTEXT: ["https://w3id.org/demeter/agri-context.jsonld",
+            Application: "http://lpis.ec.europa.eu/registry/applicationschema/cap-iacs-aid#Application",
+            M: "http://qudt.org/vocab/unit/M", 
+            M2: "http://qudt.org/vocab/unit/M2", 
+            crop: "http://lpis.ec.europa.eu/registry/applicationschema/cap-iacs-aid#crop",
+            iacsId: "http://lpis.ec.europa.eu/registry/applicationschema/cap-iacs-base#iacsId",
+            isPartOf: "http://purl.org/dc/terms/isPartOf", 
+            description: "http://purl.org/dc/terms/description",
+            hasBoundingBox: "http://www.opengis.net/ont/geosparql#hasBoundingBox",
+            GeometryVirt: "http://www.openlinksw.com/schemas/virtrdf#Geometry",
+            Ontology: "http://www.w3.org/2002/07/owl#Ontology", 
+            Dataset: "http://www.w3.org/ns/dcat#Dataset",
+            geoJSONLiteral: "http://www.opengis.net/ont/geosparql#geoJSONLiteral",            
+            wktLiteral: "http://www.opengis.net/ont/geosparql#wktLiteral",
+            identifierScheme: "http://portele.de/ont/inspire/baseInspire#identifierScheme",
+            shortId: "http://foodie-cloud.com/model/foodie#shortId",
+            Location: "http://purl.org/dc/terms/Location",
+            asGeoJSON: "http://www.opengis.net/ont/geosparql#asGeoJSON",
+            spatial: "http://purl.org/dc/terms/spatial",
+            bbox: "http://www.w3.org/ns/dcat#bbox",
+            geometry: "http://www.w3.org/ns/locn#geometry",
+            referenceArea: "http://lpis.ec.europa.eu/registry/applicationschema/cap-iacs-parcel#referenceArea",
+            observedPerimeter: "http://lpis.ec.europa.eu/registry/applicationschema/cap-iacs-control#observedPerimeter",                        
+            validFrom: "http://lpis.ec.europa.eu/registry/applicationschema/cap-iacs-base#validFrom",
+            FeatureCollection: "http://www.opengis.net/ont/geosparql#FeatureCollection"]
+  MAIN TYPE:
+    "@type": "ObservationCollection"
+    label: "Oilspills observation collection for trajectory {`trajectory`} longitud {`lon`} latitude {`lat`} - year 2022|<string>"
+    phenomenonTime: "`time`|<string>"
+    resultTime: "`time`|<string>"
+    madeBySensor: 
+      uri: "http://w3id.org/iliad/oilspills/sensor/{`trajectory`}"
+      "@type": "Sensor"
+      label: "Simulated sensor for trajectory {`trajectory`}|<string>"
+    hasFeatureOfInterest:
+      uri: "http://w3id.org/iliad/oilspills/feature/{`lon`}+{`lat`}"
+      "@type": ["FeatureOfInterest", "Point", "Location"]
+      label: "Feature of interest at longitud {`lon`} latitude {`lat`}|<string>"
+      lat: "`lat`|<float>"
+      long: "`lon`|<float>"
+    usedProcedure:
+      uri: "http://w3id.org/iliad/oilspills/activity/simulation"
+      "@type": "Procedure"
+      label: "Simulation|<string>"
+    hasMember:
+      "@1":
+        uri: "http://w3id.org/iliad/oilspills/observation/{`trajectory`}+{`lon`}+{`lat`}/1"
+        "@type": "Observation"
+        label: "Oilspills observation for trajectory {`trajectory`} longitude {`lon`} latitude {`lat`} property wind_drift_factor|<string>"
+        observedProperty: 
+          uri: "http://w3id.org/iliad/oilspills/property/windDriftFactor"
+          "@type": "ObservableProperty"
+          label: "Wind drift factor|<string>"
+        hasSimpleResult: "`wind_drift_factor`|<float>"
+      "@2":
+        uri: "http://w3id.org/iliad/oilspills/observation/{`trajectory`}+{`lon`}+{`lat`}/2"
+        "@type": "Observation"
+        label: "Oilspills observation for trajectory {`trajectory`} longitude {`lon`} latitude {`lat`} property current_drift_factor|<string>"
+        observedProperty: 
+          uri: "http://w3id.org/iliad/oilspills/property/currentDriftFactor"
+          "@type": "ObservableProperty"
+          label: "Current drift factor|<string>"
+        hasSimpleResult: "`current_drift_factor`|<float>"
+      "@3":
+        uri: "http://w3id.org/iliad/oilspills/observation/{`trajectory`}+{`lon`}+{`lat`}/3"
+        "@type": "Observation"
+        label: "Oilspills observation for trajectory {`trajectory`} longitude {`lon`} latitude {`lat`} property terminal_velocity|<string>"
+        observedProperty: 
+          uri: "http://w3id.org/iliad/oilspills/property/terminalVelocity"
+          "@type": "ObservableProperty"
+          label: "Terminal velocity|<string>"
+        hasSimpleResult: "`terminal_velocity`|<float>"
+
+          
+
+      
+    
+   
+        

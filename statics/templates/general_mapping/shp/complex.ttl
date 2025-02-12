@@ -1,0 +1,22 @@
+@prefix cap-iacs-base: <http://lpis.ec.europa.eu/registry/applicationschema/cap-iacs-base#> .
+@prefix cap-iacs-control: <http://lpis.ec.europa.eu/registry/applicationschema/cap-iacs-control#> .
+@prefix cap-iacs-parcel-ext: <http://lpis.ec.europa.eu/registry/applicationschema/cap-iacs-parcel#> .
+@prefix cap-iacs-parcel-spain: <http://lpis.ec.europa.eu/registry/applicationschema/cap-iacs-parcel-spain#> .
+@prefix common: <http://portele.de/ont/inspire/baseInspire#> .
+@prefix geo: <http://www.opengis.net/ont/geosparql#> .
+@prefix gn: <http://www.geonames.org/ontology#> .
+@prefix olu: <http://w3id.org/foodie/olu#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix rr: <http://www.w3.org/ns/r2rml#> .
+@prefix rrx: <http://www.w3.org/ns/r2rml-ext#> .
+@prefix rrxf: <http://www.w3.org/ns/r2rml-ext/functions/def/> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<#filename_secondary> rr:logicalTable [ rr:tableName "`{filename}`" ] ;
+    rr:predicateObjectMap [] ;
+    rr:subjectMap [ rr:class "{type}" ;
+            rr:template "{template}" ] .

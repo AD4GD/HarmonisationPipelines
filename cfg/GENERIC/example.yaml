@@ -1,0 +1,36 @@
+--- # Example config for general mapping
+
+
+cfg:
+  TEMPLATE_ID: "RPL/2022/Parcel/{`BLOKAS_ID`}"
+  CONTEXT: ["https://w3id.org/demeter/agri-context.jsonld", description: "http://schema.org/description", M: "http://qudt.org/vocab/unit/M", testing_val: "http://somevalue.for.testing/testing_val", "https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context.jsonld"]
+  MAIN TYPE:
+    "@type": ["Feature", "QuantityValue"]
+    referenceArea:
+      uri: ~
+      "@type": ["QuantityValue", "QuantityValue1"]
+      numericValue: "`SHAPE_Area`|<double>"
+      unit: "M2"
+    observedPerimeter:
+      uri: ~
+      "@type": ["QuantityValue", "Feature"]
+      type: "somethingelse"
+      numericValue: "`SHAPE_Leng`|<double>"
+      unit: "M"
+    specificLandUse: "http://w3id.org/iacs/open/lt/lpis/code/LandUseClassificationValue/{`GKODAS`}"
+    label: "Lithuanian LPIS parcel of cadastral reference #{`BLOKAS_ID`} - RPL year 2022|<string>"
+    iacsId: "`BLOKAS_ID`|<string>"
+    identifier: "`BLOKAS_ID`|<token>"
+    isPartOf:
+      uri: "http://w3id.org/iacs/open/lt/LPIS/RPL/2022"
+      "@type": "FeatureCollection"
+      description: "Collection of Lithuania RPL LPIS data 2022|<string>"
+      identifier: "RPL 2022|<token>"
+      title: "Lithuania LPIS Feature Collection of RPL 2022|<string>"
+      isPartOf: "http://w3id.org/iacs/open/lt/LPIS"
+      member: "http://w3id.org/iacs/open/lt/LPIS/RPL/2022/Parcel/{`BLOKAS_ID`}"
+    identifierScheme: "http://w3id.org/iacs/open/lt/LPIS"
+    type: "testing_val"
+    validFrom: "2022-01-01|<date>"
+    generatedAtTime: "2023-05-03|<date>"
+    start: "2022-01-01|<date>"

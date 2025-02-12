@@ -1,0 +1,8 @@
+--- # Configuration for general mapping solution.
+
+
+cfg:
+  TEMPLATE_ID: ~
+  CONTEXT: ~
+  MAIN TYPE:
+    "@type": ~

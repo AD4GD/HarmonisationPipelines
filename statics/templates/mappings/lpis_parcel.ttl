@@ -1,0 +1,147 @@
+@prefix geof: <http://www.opengis.net/def/function/geosparql/>.
+@prefix map: <#>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix geo:   <http://www.opengis.net/ont/geosparql#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix rr: <http://www.w3.org/ns/r2rml#>.
+@prefix rrx: <http://www.w3.org/ns/r2rml-ext#>.
+@prefix rrxf: <http://www.w3.org/ns/r2rml-ext/functions/def/>.
+@prefix strdf: <http://strdf.di.uoa.gr/ontology#>.
+@prefix iso19150-2: <http://def.seegrid.csiro.au/isotc211/iso19150/-2/2012/basic#> .
+@prefix foodie: <http://foodie-cloud.com/model/foodie#> .
+@prefix foodie-cz: <http://foodie-cloud.com/model/foodie-cz#> .
+@prefix foodie-es: <http://foodie-cloud.com/model/foodie-es#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
+@prefix owl:   <http://www.w3.org/2002/07/owl#> .
+@prefix skos:  <http://www.w3.org/2004/02/skos/core#> .
+@prefix virtrdf: <http://www.openlinksw.com/schemas/virtrdf#> .
+@prefix iso19103: <http://def.seegrid.csiro.au/isotc211/iso19103/2005/basic#> .
+@prefix common: <http://portele.de/ont/inspire/baseInspire#> .
+@prefix prov:  <http://www.w3.org/ns/prov#> .
+@prefix olu: <http://w3id.org/foodie/olu#> .
+@prefix af-inspire:	<http://inspire.ec.europa.eu/schemas/af/3.0#> .
+@prefix gn: <http://www.geonames.org/ontology#> .
+@prefix cap-iacs-base: <http://lpis.ec.europa.eu/registry/applicationschema/cap-iacs-base#> .
+@prefix cap-iacs-basecode: <http://lpis.ec.europa.eu/registry/applicationschema/cap-iacs-base/code#> .
+@prefix cap-iacs-parcel: <http://lpis.ec.europa.eu/registry/applicationschema/cap-iacs-parcel#> .
+@prefix cap-iacs-parcelcode: <http://lpis.ec.europa.eu/registry/applicationschema/cap-iacs-parcel/code#> .
+@prefix cap-iacs-beneficiery: <http://lpis.ec.europa.eu/registry/applicationschema/cap-iacs-beneficiery#> .
+@prefix cap-iacs-beneficierycode: <http://lpis.ec.europa.eu/registry/applicationschema/cap-iacs-beneficiery/code#> .
+@prefix cap-iacs-control: <http://lpis.ec.europa.eu/registry/applicationschema/cap-iacs-control#> .
+@prefix cap-iacs-controlcode: <http://lpis.ec.europa.eu/registry/applicationschema/cap-iacs-control/code#> .
+@prefix cap-iacs-aid: <http://lpis.ec.europa.eu/registry/applicationschema/cap-iacs-aid#> .
+@prefix cap-iacs-aidcode: <http://lpis.ec.europa.eu/registry/applicationschema/cap-iacs-aid/code#> .
+@prefix cap-fas: <http://lpis.ec.europa.eu/registry/applicationschema/cap-fas#> .
+@prefix cap-iacs-animal: <http://lpis.ec.europa.eu/registry/applicationschema/cap-iacs-animal#> .
+@prefix cap-iacs-entitlement: <http://lpis.ec.europa.eu/registry/applicationschema/cap-iacs-entitlement#> .
+@prefix cap-iacs-entitlementcode: <http://lpis.ec.europa.eu/registry/applicationschema/cap-iacs-entitlement/code#> .
+@prefix cap-iacs-parcel-ext: <http://lpis.ec.europa.eu/registry/applicationschema/cap-iacs-parcel#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+
+##################### Parcel #####################
+
+
+<#filename_parcel>   # variable ns
+    rr:logicalTable [ rr:tableName "`{filename}`"; ];   # variable filename
+    rr:subjectMap [ rr:class cap-iacs-parcel:ReferenceParcel; rr:template "{temp_parcel}"; ];   # variable
+    rr:predicateObjectMap [
+        rr:predicate rdfs:label;
+        rr:objectMap [
+            rr:datatype xsd:string;
+            rr:template "{label_var}";   # variable
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate cap-iacs-base:iacsId;
+        rr:objectMap [
+            rr:template "{IACSID_var}";   # variable
+            rr:datatype xsd:string;
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate common:identifierScheme;
+        rr:objectMap [
+            rr:constant <base_namespace>;   # variable i.e., http://w3id.org/iacs/open/es/LPIS/
+        ];
+     ];
+
+    rr:predicateObjectMap [
+        rr:predicate cap-iacs-base:validFrom;
+        rr:objectMap [
+            rr:datatype xsd:string_or_date;
+            rr:template "{datefrom_var}";   # variable, date RRRR-MM-DD
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate prov:generatedAtTime;
+        rr:objectMap [
+            rr:datatype xsd:date;
+            rr:constant "{now_var}";   # variable, today's date RRRR-MM-DD
+        ];
+    ];
+
+    rr:predicateObjectMap [
+        rr:predicate foodie:shortId;
+        rr:objectMap [
+            rr:datatype xsd:string;
+            rr:column "{shortid_var}";   # variable
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate geo:hasGeometry;
+        rr:objectMap [
+            rr:termType rr:IRI;
+            rr:template "{temp_geometry}";   # variable
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate cap-iacs-parcel:referenceArea;
+        rr:objectMap [
+            rr:termType rr:IRI;
+            rr:template "{temp_area}";   # variable
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate cap-iacs-control:observedPerimeter;
+        rr:objectMap [
+            rr:termType rr:IRI;
+            rr:template "{temp_observed_perimeter}";   # variable
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate olu:specificLandUse;
+        rr:objectMap [
+            rr:termType rr:IRI;
+            rr:template "{landuse_var}";   # variable, appended to the base
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate gn:parentADM2;
+        rr:objectMap [
+            rr:termType rr:IRI;
+            rr:template "{parentadm2_var}";   # variable appended to the base
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate gn:parentADM3;
+        rr:objectMap [
+            rr:termType rr:IRI;
+            rr:template "{parameteradm3_var}";   # variable appended to the base
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate cap-iacs-base:municipalityId;
+        rr:objectMap [
+            rr:template "{municipalityid_var}";   # variable
+            rr:datatype xsd:string;
+        ];
+    ];
+
+  .

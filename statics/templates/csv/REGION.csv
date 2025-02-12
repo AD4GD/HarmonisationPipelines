@@ -1,0 +1,147 @@
+REGION,REGIONCODE
+(0341) Vlaanderen,BE2
+(0343) Wallonie,BE3
+(0740) Cyprus,CY0
+(0745) Czech Republic,CZ0
+(0370) Denmark,DK0
+(0010) Schleswig-Holstein,DEF
+(0020) Hamburg,DE6
+(0030) Niedersachsen,DE9
+(0050) Nordrhein-Westfalen,DEA
+(0060) Hessen,DE7
+(0070) Rheinland-Pfalz,DEB
+(0080) Baden-Württemberg,DE1
+(0090) Bayern,DE2
+(0100) Saarland,DEC
+(0112) Brandenburg,DE4
+(0113) Mecklenburg-Vorpommern,DE8
+(0114) Sachsen,DED
+(0115) Sachsen-Anhalt,DEE
+(0116) Thüringen,DEG
+(0450) Makedonia-Thraki,GR13
+(0460) Ipiros-Peloponissos-Nissi Ioniou,GR25
+(0470) Thessalia,GR14
+(0480) Sterea Ellas-Nissi Egaeou-Kriti,GR4
+(0500) Galicia,ES11
+(0505) Asturias,ES12
+(0510) Cantabria,ES13
+(0515) País Vasco,ES21
+(0520) Navarra,ES22
+(0525) La Rioja,ES23
+(0530) Aragón,ES24
+(0535) Cataluña,ES51
+(0540) Islas Baleares,ES53
+(0545) Castilla y León,ES41
+(0550) Madrid,ES30
+(0555) Castilla-La Mancha,ES42
+(0560) Comunidad Valenciana,ES52
+(0565) Murcia,ES62
+(0570) Extremadura,ES43
+(0575) Andalucía,ES61
+(0580) Canarias,ES70
+(0755) Estonia,EE0
+(0121) Île-de-France,FR1
+(0131) Champagne-Ardenne,FR21
+(0132) Picardie,FR22
+(0133) Haute-Normandie,FR23
+(0134) Centre,FR24
+(0135) Basse-Normandie,FR25
+(0136) Bourgogne,FR26
+(0141) Nord-Pas-de-Calais,FR3
+(0151) Lorraine,FR41
+(0152) Alsace,FR42
+(0153) Franche-Comté,FR43
+(0162) Pays de la Loire,FR51
+(0163) Bretagne,FR52
+(0164) Poitou-Charentes,FR53
+(0182) Aquitaine,FR61
+(0183) Midi-Pyrénées,FR62
+(0184) Limousin,FR63
+(0192) Rhône-Alpes,FR71
+(0193) Auvergne,FR72
+(0201) Languedoc-Roussillon,FR81
+(0203) Provence-Alpes-Côte d'Azur,FR82
+(0204) Corse,FR83
+(0760) Közép-Magyarország,HU10
+(0761) Közép-Dunántúl,HU21
+(0762) Nyugat-Dunántúl,HU22
+(0763) Dél-Dunántúl,HU23
+(0764) Észak-Magyarország,HU31
+(0765) Észak-Alföld,HU32
+(0766) Dél-Alföld,HU33
+(0380) Ireland,IE0
+(0221) Valle d'Aosta,ITC2
+(0222) Piemonte,ITC1
+(0230) Lombardia,ITC4
+(0241) Trentino,ITD2
+(0242) Alto Adige,ITD1
+(0243) Veneto,ITD3
+(0244) Friuli-Venezia Giulia,ITD4
+(0250) Liguria,ITC3
+(0260) Emilia-Romagna,ITD5
+(0270) Toscana,ITE1
+(0281) Marche,ITE3
+(0282) Umbria,ITE2
+(0291) Lazio,ITE4
+(0292) Abruzzo,ITF1
+(0301) Molise,ITF2
+(0302) Campania,ITF3
+(0303) Calabria,ITF6
+(0311) Puglia,ITF4
+(0312) Basilicata,ITF5
+(0320) Sicilia,ITG1
+(0330) Sardegna,ITG2
+(0775) Lithuania,LT0
+(0350) Luxembourg,LU0
+(0770) Latvia,LV0
+(0780) Malta,MT0
+(0360) The Netherlands,NL0
+(0660) Austria,AT1
+(0785) Pomorze i Mazury,PL6
+(0790) Wielkopolska and Slask,PL4
+(0795) Mazowsze i Podlasie,PL3
+(0800) Malopolska i Pogórze,PL2
+(0610) Entre Douro e Minho/Beira litoral,PT111
+(0620) Tras-os-Montes/Beira interior,PT11
+(0630) Ribatejo e Oeste,PT16
+(0640) Alentejo e Algarve,PT15
+(0650) Açores e Madeira,PT30
+(0670) Etelä-Suomi,FI18
+(0680) Sisä-Suomi,FI19
+(0690) Pohjanmaa,FI19
+(0700) Pohjois-Suomi,FI1A
+(0710) Slättbyggdslän,SE2
+(0720) Skogs- och mellanbygdslän,SE1
+(0730) Län i norra Sverige,SE3
+(0810) Slovakia,SK0
+(0820) Slovenia,SI0
+(0411) England - North Region,UKC
+(0412) England - East Region,UKF
+(0413) England - West Region,UKG
+(0421) Wales,UKL
+(0431) Scotland,UKM
+(0441) Northern Ireland,UKN
+(0831) Severozapaden,BG31
+(0832) Severen tsentralen,BG32
+(0833) Severoiztochen,BG33
+(0834) Yugozapaden,BG41
+(0835) Yuzhen tsentralen,BG42
+(0836) Yugoiztochen,BG34
+(0840) Nord-Est,RO21
+(0841) Sud-Est,RO22
+(0842) Sud-Muntenia,RO31
+(0843) Sud-Vest-Oltenia,RO41
+(0844) Vest,RO42
+(0845) Nord-Vest,RO11
+(0846) Centru,RO12
+(0847) Bucuresti-Ilfov,RO32
+(0615) Norte e Centro,PT1
+(0205) Guadeloupe,PT16
+(0206) Martinique,PT15
+(0207) La Réunion,PT30
+(0767) Alföld,HU3
+(0768) Dunántúl,HU2
+(0861) Jadranska Hrvatska (Adriatic Croatia),HR03
+(0862) Kontinentalna Hrvatska (Continental Croatia),HR01
+.,x
+,x

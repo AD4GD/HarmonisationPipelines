@@ -1,0 +1,14 @@
+--- # Mapping configuration for Spain
+
+cfg: {BASE_URI: 'http://w3id.org/iacs/open/es/LPIS/',
+      LABEL: 'Spanish LPIS parcel of cadastral reference #{`provincia`}-{`municipio`}-{`agregado`}-{`poligono`}-{`parcela`}-{`recinto`}',
+      IACS_ID: '{`provincia`}-{`municipio`}-{`agregado`}-{`poligono`}-{`parcela`}-{`recinto`}',
+      VALID_FROM: '2020-06-01',
+      SHORT_ID: '`dn_oid`',
+      SPECIFIC_LAND_USE: 'http://w3id.org/iacs/open/es/lpis/code/LandUseClassificationValue/{`uso_sigpac`}',
+      PARENT_ADM2: 'province/{`provincia`}',
+      PARENT_ADM3: 'municipality/{`provincia`}_{`municipio`}',
+      MUNICIPALITY_ID: '{`provincia`}_{`municipio`}',
+      AREA: '`dn_surface`',
+      PERIMETER: '`dn_perim`',
+      TEMPLATE_ID: '{`dn_oid`}',}

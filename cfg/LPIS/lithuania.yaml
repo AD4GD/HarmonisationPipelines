@@ -1,0 +1,9 @@
+--- # Mapping configuration for Lithuania
+
+cfg: {BASE_URI: 'http://w3id.org/iacs/open/lt/LPIS/',
+      LABEL: 'Lithuanian LPIS parcel of cadastral reference #{`NUMERIS`}',
+      IACS_ID: '`NUMERIS`',
+      VALID_FROM: '{`DATA`}',
+      SPECIFIC_LAND_USE: 'http://w3id.org/iacs/open/lt/lpis/code/LandUseClassificationValue/{`GEO_KODAS`}',
+      TEMPLATE_ID: '{`gid`}',
+      LAYER_ABBREVIATION: 'RPL'}

@@ -1,0 +1,14 @@
+chardet==5.2.0
+click==7.1.2
+click-option-group==0.5.1
+pandas==1.4.2
+progressbar2==3.51.4
+python-dotenv==0.15.0
+rdflib==6.1.1
+PyYAML==5.3.1
+pytest==8.3.2
+xarray==2023.8.0
+netCDF4==1.6.4
+geopandas==0.14.4
+numpy==1.22.3
+ruamel.yaml==0.18.6

@@ -1,0 +1,121 @@
+Bootstrap: docker
+From: ubuntu:18.04
+Stage: build
+
+%post
+  # base image.
+  # adding conda into path.
+  # PATH="/opt/conda3/bin:${PATH}"
+  # echo "export PATH=/opt/conda3/bin:$PATH ">> $SINGULARITY_ENVIRONMENT
+  mkdir ${SINGULARITY_ROOTFS}/temp
+  chmod a+xrw ${SINGULARITY_ROOTFS}/temp
+  export TMP=${SINGULARITY_ROOTFS}/temp
+  export TMPDIR=$TMP
+  export TEMPDIR=$TMP
+  env | grep -i TMP
+  env | grep -i temp
+
+  # OS update and package installation 
+  apt-get update && apt-get -y upgrade
+  apt-get -y install \
+  build-essential \
+  wget \
+  curl \
+  bzip2 \
+  ca-certificates \
+  libglib2.0-0 \
+  libxext6 \
+  libsm6 \
+  libxrender1 \
+  git
+  apt-get clean
+  # updating apt, installing python3.
+  # apt install -y htop python3-dev 
+  # installing anaconda distribution.
+  mkdir -p /opt
+  #Installing Anaconda 3.
+  wget -c https://repo.anaconda.com/archive/Anaconda3-2020.07-Linux-x86_64.sh
+  /bin/bash Anaconda3-2020.07-Linux-x86_64.sh -bfp /opt/conda3
+  PATH=/opt/conda3/bin:$PATH
+  export PATH=/opt/conda3/bin:$PATH
+  ls -alh /temp
+  ls -alh /opt
+  ls -alh /opt/conda3
+  ls -alh /opt/conda3/bin
+  #Conda configuration of channels from .condarc file
+  conda config --file /.condarc --add channels defaults
+  conda config --file /.condarc --add channels conda-forge
+  conda update conda
+  #List installed environments
+  conda list
+  #
+  # creating new environment for the project.
+  conda create -y -n pipelines python=3.7
+  # installing openjdk and git.
+  # apt-get update
+  apt-get install -y openjdk-8-jdk 
+  apt install -y git
+  #
+  # installing software project management tool - maven and adding it to the PATH.
+  cd /opt
+  wget --no-verbose -O apache-maven-3.6.3-bin.tar.gz http://www-eu.apache.org/dist/maven/maven-3/3.6.3/binaries/apache-maven-3.6.3-bin.tar.gz 
+  tar xzf apache-maven-3.6.3-bin.tar.gz -C /opt/ 
+  ln -s /opt/apache-maven-3.6.3 /opt/maven 
+  ln -s /opt/maven/bin/mvn /usr/local/bin 
+  rm -f apache-maven-3.6.3-bin.tar.gz
+  MAVEN_HOME=/opt/maven
+  echo "export MAVEN_HOME=/opt/maven " >> $SINGULARITY_ENVIRONMENT
+  #
+  # copying repository content into a src folder.
+  cd /opt
+  git clone --branch master https://git.man.poznan.pl/stash/scm/dem/pipelines.git 
+  mkdir -p src 
+  mv pipelines/* src/ 
+  rm -rf pipelines/
+  #
+  # cloning rmlmapper tool repository and setting up directories.
+  cd /opt
+  cd src 
+  git clone --branch v4.9.0 https://github.com/RMLio/rmlmapper-java.git
+  mkdir -p utils/rmlmapper/ 
+  mv rmlmapper-java/* utils/rmlmapper/ 
+  rm -rf rmlmapper-java/
+  #
+  # building rmlmapper jar using maven.
+  cd /opt
+  cd src/utils/rmlmapper 
+  mvn install -DskipTests
+  #
+  # cloning geotriples tool repository and setting up directories.
+  cd /opt
+  cd src 
+  git clone https://github.com/rapw3k/GeoTriples.git 
+  mkdir -p utils/GeoTriples/ 
+  mv GeoTriples/* utils/GeoTriples/ 
+  rm -rf GeoTriples/
+  #
+  # building geotriples jar using maven.
+  cd /opt
+  cd src/utils/GeoTriples 
+  mvn package
+  #
+  # installing all python dependencies related to the project in the virtual environment.
+  cd /opt
+  /bin/bash -c "cd src && source activate pipelines &&  pip install -r requirements.txt"
+  #
+  # creating .ssh directory and a file that will store key.
+  # cd ~ \
+  # && mkdir .ssh \
+  # && cd .ssh \
+  # && touch known_hosts
+
+
+
+%environment
+  export PATH="/opt/conda3/bin:${PATH}"
+  export MAVEN_HOME=/opt/maven
+
+%runscript
+  exec /bin/bash "$@"
+%startscript
+  exec /bin/bash "$@"

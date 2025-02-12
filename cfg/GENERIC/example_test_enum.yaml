@@ -1,0 +1,23 @@
+--- # Example config for general mapping
+
+
+cfg:
+  TEMPLATE_ID: "RPL/2022/Parcel/{`seq`}"
+  CONTEXT: ["https://w3id.org/demeter/agri-context.jsonld", description: "http://schema.org/description", M: "http://qudt.org/vocab/unit/M", testing_val: "http://somevalue.for.testing/testing_val", "https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context.jsonld"]
+  MAIN TYPE:
+    "@type": ["Feature", "QuantityValue"]
+    referenceArea:
+      "@1":
+        # uri: "http://referenceArea.uri1.com"
+        uri: ~
+        "@type": "QuantityValue1"
+        numericValue: "`lang`|<double>"
+      "@2":
+        uri: "http://referenceArea.uri2.com"
+        "@type": "QuantityValue2"
+        numericValue: "`lat`|<double>"
+    anotherMainAttr:
+      uri: "http://www.example.org/anotherMainAttr/{`seq`}"
+      "@type": ["QuantityValue", "QuantityValue1"]
+      numericValue: "`lang2`|<double>"
+      unit: "`code2`|<description>"

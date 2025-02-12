@@ -1,0 +1,14 @@
+.idea
+__pycache__
+/.env
+/cfg/config.yaml
+/utils
+/temp
+/results
+/output
+/logs
+**/.DS_Store*
+/.vscode
+/.pytest_cache
+**/.pytest_cache
+/tarql_data
